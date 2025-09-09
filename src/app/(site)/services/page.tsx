@@ -1,10 +1,14 @@
+
+'use client';
+
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShieldCheck, Video, Car, Siren, Briefcase, CalendarClock } from 'lucide-react';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Our Services | Guardian Shield Security',
-  description: 'Explore the comprehensive range of professional security services offered by Guardian Shield Security, from manned guarding to advanced CCTV monitoring.',
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
 };
 
 const services = [
@@ -43,16 +47,28 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <div className="bg-secondary">
+      <motion.div
+        className="bg-secondary"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">Our Security Services</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             Comprehensive solutions designed to protect your people, property, and assets with diligence and professionalism.
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="container mx-auto px-4 py-16">
+      <motion.div
+        className="container mx-auto px-4 py-16"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeIn}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col hover:shadow-lg transition-shadow duration-300">
@@ -68,7 +84,7 @@ export default function ServicesPage() {
             </Card>
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

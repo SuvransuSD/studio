@@ -1,12 +1,16 @@
+
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Shield, Eye, Handshake } from 'lucide-react';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'About Us | Guardian Shield Security',
-  description: 'Learn about Guardian Shield Security\'s history, mission, and the dedicated team committed to your safety.',
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
 };
 
 const teamMembers = [
@@ -19,18 +23,30 @@ const teamMembers = [
 export default function AboutPage() {
   return (
     <>
-      <div className="bg-secondary">
+      <motion.div
+        className="bg-secondary"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">About Guardian Shield Security</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             Dedicated to providing unparalleled safety and peace of mind through integrity, vigilance, and professionalism.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-4 py-16">
         {/* Our Story Section */}
-        <section className="grid md:grid-cols-2 gap-12 items-center mb-24">
+        <motion.section
+          className="grid md:grid-cols-2 gap-12 items-center mb-24"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
           <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
             <Image
               src="https://picsum.photos/800/600"
@@ -49,10 +65,16 @@ export default function AboutPage() {
               From our humble beginnings with a small team of dedicated professionals, we have grown into a leading security provider, trusted by businesses and individuals across the nation. Our commitment to our core values remains the bedrock of our success.
             </p>
           </div>
-        </section>
+        </motion.section>
 
         {/* Core Values Section */}
-        <section className="mb-24">
+        <motion.section
+          className="mb-24"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground">Our Core Values</h2>
             <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
@@ -100,10 +122,15 @@ export default function AboutPage() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </motion.section>
 
         {/* Leadership Team Section */}
-        <section>
+        <motion.section
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground">Meet Our Leadership</h2>
             <p className="mt-2 text-muted-foreground">The experienced minds guiding our mission.</p>
@@ -120,7 +147,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
       </div>
     </>
   );

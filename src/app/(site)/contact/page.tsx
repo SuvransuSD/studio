@@ -1,5 +1,7 @@
+
 'use client';
 
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -7,21 +9,39 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+};
+
 export default function ContactPage() {
   const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239486.82859695995!2d85.65624619992404!3d20.30113221941624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha%2C%20India!5e0!3m2!1sen!2sus!4v1687834573699!5m2!1sen!2sus";
 
   return (
     <>
-      <div className="bg-secondary">
+      <motion.div
+        className="bg-secondary"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={fadeIn}
+      >
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">Contact Us</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             We're here to help. Reach out to us for a consultation or with any questions you may have.
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="container mx-auto px-4 py-16">
+      <motion.div
+        className="container mx-auto px-4 py-16"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeIn}
+      >
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card>
@@ -83,7 +103,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
