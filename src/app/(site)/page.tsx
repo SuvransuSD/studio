@@ -117,7 +117,7 @@ export default function HomePage() {
                     <motion.div
                       initial="initial"
                       whileInView="animate"
-                      viewport={{ once: true }}
+                      viewport={{ once: true, amount: 0.2 }}
                       variants={fadeIn}
                       className="container mx-auto px-4"
                     >
