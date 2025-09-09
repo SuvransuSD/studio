@@ -14,13 +14,44 @@ import {
   Clock,
   ThumbsUp,
   ArrowRight,
+  Star,
 } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
 };
+
+const testimonials = [
+  {
+    name: 'Sarah L.',
+    role: 'CEO, TechCorp',
+    avatar: 'https://picsum.photos/100/100?a=5',
+    dataAiHint: 'woman face',
+    quote:
+      'Guardian Shield\'s team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can\'t recommend them enough.',
+  },
+  {
+    name: 'Michael B.',
+    role: 'Event Organizer',
+    avatar: 'https://picsum.photos/100/100?a=6',
+    dataAiHint: 'man face',
+    quote:
+      'We hired Guardian Shield for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise.',
+  },
+  {
+    name: 'David R.',
+    role: 'Warehouse Manager',
+    avatar: 'https://picsum.photos/100/100?a=7',
+    dataAiHint: 'man face',
+    quote:
+      'The mobile patrol service has been a game-changer for our facility. The random checks and detailed reports have significantly reduced instances of trespassing and theft after hours.',
+  },
+];
+
 
 export default function HomePage() {
   return (
@@ -75,7 +106,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ amount: 0.5 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -89,7 +120,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             <motion.div variants={fadeIn}>
@@ -151,7 +182,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ amount: 0.5 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -166,7 +197,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             {[
@@ -203,13 +234,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section */}
       <section className="w-full py-16 md:py-24 bg-secondary">
+        <div className="container max-w-6xl mx-auto px-4">
+          <motion.div
+            className="text-center mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ amount: 0.5 }}
+            variants={fadeIn}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Trusted by Leading Businesses
+            </h2>
+            <p className="max-w-2xl mx-auto text-muted-foreground mt-4">
+              Hear what our clients have to say about our commitment to their safety.
+            </p>
+          </motion.div>
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ amount: 0.2 }}
+            variants={fadeIn}
+          >
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1 h-full">
+                      <Card className="h-full flex flex-col">
+                        <CardHeader>
+                          <div className="flex items-center gap-4">
+                            <Avatar className="w-14 h-14">
+                              <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
+                              <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                              <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                            </div>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="flex flex-col flex-grow">
+                          <div className="flex gap-0.5 text-yellow-500 mb-4">
+                            {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                          </div>
+                          <p className="text-muted-foreground flex-grow">&ldquo;{testimonial.quote}&rdquo;</p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </motion.div>
+        </div>
+      </section>
+
+
+      {/* CTA Section */}
+      <section className="w-full py-16 md:py-24">
         <motion.div
           className="container max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           variants={fadeIn}
         >
           <h2 className="text-3xl font-bold text-foreground mb-4">
