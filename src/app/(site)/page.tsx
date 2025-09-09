@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay"
+
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -52,51 +54,91 @@ const testimonials = [
   },
 ];
 
+const heroSlides = [
+  {
+    image: 'https://picsum.photos/1200/800?tech',
+    dataAiHint: 'security command center',
+    alt: 'Modern security operations center',
+    title: 'Advanced Security for a Modern World',
+    description: 'Guardian Shield delivers intelligent, proactive security solutions that protect your assets, people, and peace of mind.',
+    buttonText: 'Request a Consultation',
+    buttonLink: '/contact',
+  },
+  {
+    image: 'https://picsum.photos/1200/800?guard',
+    dataAiHint: 'security guard uniform',
+    alt: 'Professional security guard',
+    title: 'Elite Manned Guarding Services',
+    description: 'Highly-trained officers providing a visible deterrent and rapid response for properties of all types.',
+    buttonText: 'Explore Guarding',
+    buttonLink: '/services',
+  },
+  {
+    image: 'https://picsum.photos/1200/800?event',
+    dataAiHint: 'secure event',
+    alt: 'Large scale event security',
+    title: 'Comprehensive Event Security',
+    description: 'Specialized security planning and management for public and private events, ensuring a safe environment for all attendees.',
+    buttonText: 'Secure Your Event',
+    buttonLink: '/contact',
+  },
+];
+
 
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center bg-background">
-      {/* Hero Section */}
+      {/* Hero Carousel Section */}
       <section className="w-full relative">
-        <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center py-20 md:py-32 px-4">
-          <motion.div
-            className="text-center md:text-left"
-            initial="initial"
-            animate="animate"
-            variants={fadeIn}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tighter mb-6">
-              Advanced Security for a Modern World
-            </h1>
-            <p className="max-w-xl text-lg text-muted-foreground mb-8 mx-auto md:mx-0">
-              Guardian Shield delivers intelligent, proactive security solutions
-              that protect your assets, people, and peace of mind.
-            </p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <Button asChild size="lg">
-                <Link href="/contact">Request a Consultation</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/services">Our Services</Link>
-              </Button>
-            </div>
-          </motion.div>
-          <motion.div
-            className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Image
-              src="https://picsum.photos/800/600?tech"
-              alt="Modern security operations center"
-              data-ai-hint="security command center"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
-          </motion.div>
-        </div>
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 5000,
+              stopOnInteraction: true,
+            }),
+          ]}
+          opts={{ loop: true }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {heroSlides.map((slide, index) => (
+              <CarouselItem key={index}>
+                <div className="relative h-[600px] w-full">
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt}
+                    data-ai-hint={slide.dataAiHint}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                  <div className="absolute inset-0 bg-black/50" />
+                  <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
+                    <motion.div
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: false }}
+                      variants={fadeIn}
+                      className="container mx-auto px-4"
+                    >
+                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6">
+                        {slide.title}
+                      </h1>
+                      <p className="max-w-2xl mx-auto text-lg text-neutral-200 mb-8">
+                        {slide.description}
+                      </p>
+                      <Button asChild size="lg">
+                        <Link href={slide.buttonLink}>{slide.buttonText}</Link>
+                      </Button>
+                    </motion.div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex text-white border-white/50 bg-black/20 hover:bg-white hover:text-black" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 hidden md:flex text-white border-white/50 bg-black/20 hover:bg-white hover:text-black" />
+        </Carousel>
       </section>
 
       {/* Why Choose Us Section */}
@@ -106,7 +148,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.5 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -120,7 +162,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             <motion.div variants={fadeIn}>
@@ -182,7 +224,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.5 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -197,7 +239,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             {[
@@ -241,7 +283,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.5 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -254,7 +296,7 @@ export default function HomePage() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={fadeIn}
           >
             <Carousel
@@ -306,7 +348,7 @@ export default function HomePage() {
           className="container max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
-          viewport={{ amount: 0.5 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeIn}
         >
           <h2 className="text-3xl font-bold text-foreground mb-4">
