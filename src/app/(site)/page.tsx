@@ -117,7 +117,7 @@ export default function HomePage() {
                     <motion.div
                       initial="initial"
                       whileInView="animate"
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       variants={fadeIn}
                       className="container mx-auto px-4"
                     >
@@ -148,7 +148,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -162,7 +162,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             <motion.div variants={fadeIn}>
@@ -224,7 +224,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -239,7 +239,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             {[
@@ -283,7 +283,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -296,7 +296,7 @@ export default function HomePage() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <Carousel
@@ -348,7 +348,7 @@ export default function HomePage() {
           className="container max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeIn}
         >
           <h2 className="text-3xl font-bold text-foreground mb-4">
