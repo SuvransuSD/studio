@@ -8,8 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function ContactPage() {
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Bhubaneswar,Odisha`;
+  const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239486.82859695995!2d85.65624619992404!3d20.30113221941624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha%2C%20India!5e0!3m2!1sen!2sus!4v1687834573699!5m2!1sen!2sus";
 
   return (
     <>
@@ -71,22 +70,15 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Location</h2>
               <div className="relative h-80 w-full rounded-lg overflow-hidden border">
-                {apiKey && apiKey !== "YOUR_GOOGLE_MAPS_API_KEY_HERE" ? (
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                    src={mapSrc}>
-                  </iframe>
-                ) : (
-                  <div className="w-full h-full bg-secondary flex items-center justify-center">
-                    <p className="text-muted-foreground text-center p-4">
-                      Please add your Google Maps API key to the .env file to display the map.
-                    </p>
-                  </div>
-                )}
+                <iframe
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={mapSrc}>
+                </iframe>
               </div>
             </div>
           </div>
