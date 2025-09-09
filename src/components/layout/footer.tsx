@@ -34,7 +34,7 @@ export function Footer() {
                 <Mail className="w-4 h-4" /> contact@guardianshield.com
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 123 Security Avenue, Metropolis
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 123 Security Avenue, Bhubaneswar
               </li>
             </ul>
           </div>
