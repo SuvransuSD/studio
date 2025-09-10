@@ -73,15 +73,15 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Information</h2>
               <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-accent" />
-                  <span>contact@guardianshield.com</span>
+                  <Mail className="w-6 h-6 text-primary" />
+                  <span>contact@pretoriansecurity.com</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-accent" />
+                  <Phone className="w-6 h-6 text-primary" />
                   <span>+1 (555) 123-4567</span>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-accent mt-1 shrink-0" />
+                  <MapPin className="w-6 h-6 text-primary mt-1 shrink-0" />
                   <span>123 Security Avenue, Suite 100,<br />Bhubaneswar, Odisha</span>
                 </div>
               </div>

@@ -23,7 +23,7 @@ export default function CareersPage() {
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">Join Our Team</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            We are looking for dedicated, professional, and vigilant individuals to join Guardian Shield Security. Start your career with us and make a difference.
+            We are looking for dedicated, professional, and vigilant individuals to join Pretorian Integrated Security. Start your career with us and make a difference.
           </p>
         </div>
       </motion.div>

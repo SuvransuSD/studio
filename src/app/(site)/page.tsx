@@ -34,7 +34,7 @@ const testimonials = [
     avatar: 'https://picsum.photos/100/100?a=5',
     dataAiHint: 'woman face',
     quote:
-      'Guardian Shield\'s team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can\'t recommend them enough.',
+      'Pretorian\'s team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can\'t recommend them enough.',
   },
   {
     name: 'Michael B.',
@@ -42,7 +42,7 @@ const testimonials = [
     avatar: 'https://picsum.photos/100/100?a=6',
     dataAiHint: 'man face',
     quote:
-      'We hired Guardian Shield for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise.',
+      'We hired Pretorian for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise.',
   },
   {
     name: 'David R.',
@@ -60,7 +60,7 @@ const heroSlides = [
     dataAiHint: 'security command center',
     alt: 'Modern security operations center',
     title: 'Advanced Security for a Modern World',
-    description: 'Guardian Shield delivers intelligent, proactive security solutions that protect your assets, people, and peace of mind.',
+    description: 'Pretorian Integrated Security delivers intelligent, proactive security solutions that protect your assets, people, and peace of mind.',
     buttonText: 'Request a Consultation',
     buttonLink: '/contact',
   },
@@ -152,7 +152,7 @@ export default function HomePage() {
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Why Guardian Shield Security?
+              Why Pretorian Integrated Security?
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground mt-4">
               Our commitment to excellence and innovation sets us apart.
@@ -251,7 +251,7 @@ export default function HomePage() {
                 <Card className="group h-full overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <div className="bg-accent/20 text-accent p-3 rounded-lg">
+                      <div className="bg-primary/10 text-primary p-3 rounded-lg">
                         {service.icon}
                       </div>
                       <CardTitle>{service.title}</CardTitle>

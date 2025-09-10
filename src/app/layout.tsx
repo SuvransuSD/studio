@@ -6,8 +6,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Guardian Shield Security - Professional Security Services',
-  description: 'Guardian Shield Security offers comprehensive, professional security services tailored to your needs. Trust us to protect what matters most.',
+  title: 'Pretorian Integrated Security - Professional Security Services',
+  description: 'Pretorian Integrated Security offers comprehensive, professional security services tailored to your needs. Trust us to protect what matters most.',
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} dark`}>
       <head />
       <body className="font-body antialiased">
         {children}

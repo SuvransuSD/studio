@@ -50,7 +50,7 @@ export async function submitApplication(prevState: FormState, formData: FormData
     // this might come from a specific job listing the user applied to.
     const jobDescription = `
       Position: Security Professional
-      Company: Guardian Shield Security
+      Company: Pretorian Integrated Security
       Description: Seeking a vigilant, reliable, and professional security officer. 
       Responsibilities include monitoring premises, patrolling, responding to incidents, 
       and ensuring the safety of clients and property. Strong communication and observation skills are essential.
@@ -80,8 +80,8 @@ export async function submitApplication(prevState: FormState, formData: FormData
 
     // 2. Send confirmation email to the applicant
     console.log(`--- Sending confirmation to ${email} ---`);
-    console.log(`Subject: Your application to Guardian Shield Security`);
-    console.log(`Dear ${name},\n\nThank you for applying to Guardian Shield Security. We have received your application and our team will review it shortly. We appreciate your interest in joining us.\n\nBest regards,\nThe Guardian Shield Security Team`);
+    console.log(`Subject: Your application to Pretorian Integrated Security`);
+    console.log(`Dear ${name},\n\nThank you for applying to Pretorian Integrated Security. We have received your application and our team will review it shortly. We appreciate your interest in joining us.\n\nBest regards,\nThe Pretorian Integrated Security Team`);
     console.log('--- (Simulated Confirmation Email) ---');
 
     return {

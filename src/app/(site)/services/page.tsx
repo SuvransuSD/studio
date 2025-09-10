@@ -108,7 +108,7 @@ export default function ServicesPage() {
                 <motion.div variants={fadeIn} custom={index}>
                   <Card className="flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <CardHeader className="flex items-center space-x-4 flex-row">
-                      <div className="bg-accent/20 text-accent p-3 rounded-lg">
+                      <div className="bg-primary/10 text-primary p-3 rounded-lg">
                         {service.icon}
                       </div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
             </div>
             <DialogHeader className="p-6">
               <div className="flex items-center gap-4 mb-4">
-                <div className="bg-accent/20 text-accent p-3 rounded-lg">
+                <div className="bg-primary/10 text-primary p-3 rounded-lg">
                   {selectedService.icon}
                 </div>
                 <DialogTitle className="text-2xl">{selectedService.title}</DialogTitle>

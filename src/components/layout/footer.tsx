@@ -31,7 +31,7 @@ export function Footer() {
                 <Phone className="w-4 h-4" /> +1 (555) 123-4567
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" /> contact@guardianshield.com
+                <Mail className="w-4 h-4" /> contact@pretoriansecurity.com
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 123 Security Avenue, Bhubaneswar
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Guardian Shield Security. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pretorian Integrated Security. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
