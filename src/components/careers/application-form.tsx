@@ -10,8 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Card, CardContent } from '@/components/ui/card';
 import { submitApplication, type FormState } from '@/app/actions/submit-application';
-import { useFormState } from 'react-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
 import { Loader2 } from 'lucide-react';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
@@ -39,7 +38,7 @@ const initialState: FormState = {
 };
 
 export function ApplicationForm() {
-  const [state, formAction] = useFormState(submitApplication, initialState);
+  const [state, formAction] = useActionState(submitApplication, initialState);
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
