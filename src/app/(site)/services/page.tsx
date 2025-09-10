@@ -83,7 +83,7 @@ export default function ServicesPage() {
         className="bg-secondary"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         variants={fadeIn}
       >
         <div className="container mx-auto px-4 py-16 text-center">
@@ -99,7 +99,7 @@ export default function ServicesPage() {
           className="container mx-auto px-4 py-16"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeIn}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

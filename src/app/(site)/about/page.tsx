@@ -68,7 +68,7 @@ export default function AboutPage() {
         className="bg-secondary"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         variants={fadeIn}
       >
         <div className="container mx-auto px-4 py-16 text-center">
@@ -85,7 +85,7 @@ export default function AboutPage() {
           className="grid md:grid-cols-2 gap-12 items-center mb-24"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeIn}
         >
           <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
@@ -113,7 +113,7 @@ export default function AboutPage() {
           className="mb-24"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={fadeIn}
         >
           <div className="text-center mb-12">
@@ -170,7 +170,7 @@ export default function AboutPage() {
           <motion.section
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={fadeIn}
           >
             <div className="text-center mb-12">

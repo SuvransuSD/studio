@@ -17,7 +17,7 @@ export default function CareersPage() {
         className="bg-secondary"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
         variants={fadeIn}
       >
         <div className="container mx-auto px-4 py-16 text-center">
@@ -32,7 +32,7 @@ export default function CareersPage() {
         className="container mx-auto px-4 py-16"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={fadeIn}
       >
         <div className="max-w-4xl mx-auto">
