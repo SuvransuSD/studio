@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -44,40 +45,43 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Mobile Navigation */}
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between border-b pb-4">
-                  <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-                    <Logo />
-                  </Link>
-                </div>
-                <nav className="flex flex-col space-y-4 mt-6">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={cn(
-                        'text-lg font-medium transition-colors hover:text-primary',
-                        pathname === link.href ? 'text-primary' : 'text-muted-foreground'
-                      )}
-                    >
-                      {link.label}
+        <div className="flex items-center gap-2">
+           <ThemeToggle />
+           {/* Mobile Navigation */}
+           <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center justify-between border-b pb-4">
+                    <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                      <Logo />
                     </Link>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
+                  </div>
+                  <nav className="flex flex-col space-y-4 mt-6">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={cn(
+                          'text-lg font-medium transition-colors hover:text-primary',
+                          pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
