@@ -29,7 +29,7 @@ const teamMembers = [
     image: 'https://picsum.photos/100/100?a=1',
     dataAiHint: 'man face',
     experience: '20+ years in risk management and security consulting. Former military intelligence officer.',
-    story: 'John founded Pretorian Integrated Security with a mission to bring military-grade precision and integrity to the private security sector. After a distinguished career, he saw a need for a more proactive and client-focused approach to security. He is passionate about creating safer communities and building a team that shares his commitment to excellence.',
+    story: 'John founded PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED with a mission to bring military-grade precision and integrity to the private security sector. After a distinguished career, he saw a need for a more proactive and client-focused approach to security. He is passionate about creating safer communities and building a team that shares his commitment to excellence.',
   },
   {
     name: 'Jane S., COO',
@@ -37,7 +37,7 @@ const teamMembers = [
     image: 'https://picsum.photos/100/100?a=2',
     dataAiHint: 'woman face',
     experience: '15 years in operations management for large-scale logistics and service companies.',
-    story: 'Jane is the operational backbone of Pretorian Integrated Security. Her expertise in streamlining complex operations ensures that our services are delivered efficiently and effectively. She is dedicated to fostering a culture of continuous improvement and ensuring our clients receive the highest level of service.',
+    story: 'Jane is the operational backbone of PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED. Her expertise in streamlining complex operations ensures that our services are delivered efficiently and effectively. She is dedicated to fostering a culture of continuous improvement and ensuring our clients receive the highest level of service.',
   },
   {
     name: 'Robert C., Head of Security',
@@ -72,7 +72,7 @@ export default function AboutPage() {
         variants={fadeIn}
       >
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">About Pretorian Integrated Security</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">About PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
             Dedicated to providing unparalleled safety and peace of mind through integrity, vigilance, and professionalism.
           </p>
@@ -100,7 +100,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Story</h2>
             <p className="text-muted-foreground mb-4">
-              Founded in 2010, Pretorian Integrated Security was born from a desire to create a safer community. Our founder, a veteran with extensive experience in risk management, saw the need for a security company that valued proactive prevention and client partnerships over reactive measures.
+              Founded in 2010, PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED was born from a desire to create a safer community. Our founder, a veteran with extensive experience in risk management, saw the need for a security company that valued proactive prevention and client partnerships over reactive measures.
             </p>
             <p className="text-muted-foreground">
               From our humble beginnings with a small team of dedicated professionals, we have grown into a leading security provider, trusted by businesses and individuals across the nation. Our commitment to our core values remains the bedrock of our success.
