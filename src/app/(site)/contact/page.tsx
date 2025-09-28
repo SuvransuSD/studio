@@ -16,7 +16,7 @@ const fadeIn = {
 };
 
 export default function ContactPage() {
-  const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239486.82859695995!2d85.65624619992404!3d20.30113221941624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha%2C%20India!5e0!3m2!1sen!2sus!4v1687834573699!5m2!1sen!2sus";
+  const mapSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.344402621743!2d85.76694691492026!3d20.2861269864099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1906cf2ed93579%3A0x82498444ded567c!2sNuagaon%2C%20Bhubaneswar%2C%20Odisha%20751003%2C%20India!5e0!3m2!1sen!2sus!4v1687834573699!5m2!1sen!2sus";
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary mt-1 shrink-0" />
-                  <span>123 Security Avenue, Suite 100,<br />Bhubaneswar, Odisha</span>
+                  <span>PLOT NO-233/1389, NUAGAON, SHIBA MANDIR, GHOTHAPATNA,<br /> Malipada, Bhubaneswar, Khorda- 751003, Orissa</span>
                 </div>
               </div>
             </div>

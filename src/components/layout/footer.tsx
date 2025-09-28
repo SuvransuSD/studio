@@ -34,7 +34,7 @@ export function Footer() {
                 <Mail className="w-4 h-4" /> contact@pretoriansecurity.com
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> 123 Security Avenue, Bhubaneswar
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> PLOT NO-233/1389, NUAGAON, SHIBA MANDIR, GHOTHAPATNA, Malipada, Bhubaneswar, Khorda- 751003, Orissa
               </li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Pretorian Integrated Security. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
