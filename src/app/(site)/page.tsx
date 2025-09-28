@@ -19,6 +19,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay"
+import imageData from '@/app/lib/placeholder-images.json';
 
 
 const fadeIn = {
@@ -27,62 +28,7 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const testimonials = [
-  {
-    name: 'Sarah L.',
-    role: 'CEO, TechCorp',
-    avatar: 'https://picsum.photos/100/100?a=5',
-    dataAiHint: 'woman face',
-    quote:
-      'Preetorian\'s team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can\'t recommend them enough.',
-  },
-  {
-    name: 'Michael B.',
-    role: 'Event Organizer',
-    avatar: 'https://picsum.photos/100/100?a=6',
-    dataAiHint: 'man face',
-    quote:
-      'We hired Preetorian for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise.',
-  },
-  {
-    name: 'David R.',
-    role: 'Warehouse Manager',
-    avatar: 'https://picsum.photos/100/100?a=7',
-    dataAiHint: 'man face',
-    quote:
-      'The mobile patrol service has been a game-changer for our facility. The random checks and detailed reports have significantly reduced instances of trespassing and theft after hours.',
-  },
-];
-
-const heroSlides = [
-  {
-    image: 'https://picsum.photos/1200/800?tech',
-    dataAiHint: 'security command center',
-    alt: 'Modern security operations center',
-    title: 'Advanced Security for a Modern World',
-    description: 'PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED delivers intelligent, proactive security solutions that protect your assets, people, and peace of mind.',
-    buttonText: 'Request a Consultation',
-    buttonLink: '/contact',
-  },
-  {
-    image: 'https://picsum.photos/1200/800?guard',
-    dataAiHint: 'security guard uniform',
-    alt: 'Professional security guard',
-    title: 'Elite Manned Guarding Services',
-    description: 'Highly-trained officers providing a visible deterrent and rapid response for properties of all types.',
-    buttonText: 'Explore Guarding',
-    buttonLink: '/services',
-  },
-  {
-    image: 'https://picsum.photos/1200/800?event',
-    dataAiHint: 'secure event',
-    alt: 'Large scale event security',
-    title: 'Comprehensive Event Security',
-    description: 'Specialized security planning and management for public and private events, ensuring a safe environment for all attendees.',
-    buttonText: 'Secure Your Event',
-    buttonLink: '/contact',
-  },
-];
+const { testimonials, heroSlides } = imageData;
 
 
 export default function HomePage() {
@@ -105,9 +51,9 @@ export default function HomePage() {
               <CarouselItem key={index}>
                 <div className="relative h-[600px] w-full">
                   <Image
-                    src={slide.image}
+                    src={slide.image.src}
                     alt={slide.alt}
-                    data-ai-hint={slide.dataAiHint}
+                    data-ai-hint={slide.image.dataAiHint}
                     fill
                     className="object-cover"
                     priority={index === 0}
@@ -117,7 +63,7 @@ export default function HomePage() {
                     <motion.div
                       initial="initial"
                       whileInView="animate"
-                      viewport={{ once: false, amount: 0.2 }}
+                      viewport={{ once: true, amount: 0.2 }}
                       variants={fadeIn}
                       className="container mx-auto px-4"
                     >
@@ -148,7 +94,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -162,7 +108,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             <motion.div variants={fadeIn}>
@@ -224,7 +170,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -239,7 +185,7 @@ export default function HomePage() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
             {[
@@ -283,7 +229,7 @@ export default function HomePage() {
             className="text-center mb-12"
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -296,7 +242,7 @@ export default function HomePage() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <Carousel
@@ -314,7 +260,7 @@ export default function HomePage() {
                         <CardHeader>
                           <div className="flex items-center gap-4">
                             <Avatar className="w-14 h-14">
-                              <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
+                              <AvatarImage src={testimonial.avatar.src} alt={testimonial.name} data-ai-hint={testimonial.avatar.dataAiHint} />
                               <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                             </Avatar>
                             <div>
@@ -348,7 +294,7 @@ export default function HomePage() {
           className="container max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeIn}
         >
           <h2 className="text-3xl font-bold text-foreground mb-4">

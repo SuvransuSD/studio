@@ -1,0 +1,145 @@
+{
+  "teamMembers": [
+    {
+      "name": "John D., CEO",
+      "role": "Founder & CEO",
+      "image": {
+        "src": "https://picsum.photos/seed/1/100/100",
+        "modalSrc": "https://picsum.photos/seed/1/400/600",
+        "dataAiHint": "man face"
+      },
+      "experience": "20+ years in risk management and security consulting. Former military intelligence officer.",
+      "story": "John founded PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED with a mission to bring military-grade precision and integrity to the private security sector. After a distinguished career, he saw a need for a more proactive and client-focused approach to security. He is passionate about creating safer communities and building a team that shares his commitment to excellence."
+    },
+    {
+      "name": "Jane S., COO",
+      "role": "Chief Operating Officer",
+      "image": {
+        "src": "https://picsum.photos/seed/2/100/100",
+        "modalSrc": "https://picsum.photos/seed/2/400/600",
+        "dataAiHint": "woman face"
+      },
+      "experience": "15 years in operations management for large-scale logistics and service companies.",
+      "story": "Jane is the operational backbone of PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED. Her expertise in streamlining complex operations ensures that our services are delivered efficiently and effectively. She is dedicated to fostering a culture of continuous improvement and ensuring our clients receive the highest level of service."
+    },
+    {
+      "name": "Robert C., Head of Security",
+      "role": "Head of Security",
+      "image": {
+        "src": "https://picsum.photos/seed/3/100/100",
+        "modalSrc": "https://picsum.photos/seed/3/400/600",
+        "dataAiHint": "man face"
+      },
+      "experience": "25 years in law enforcement, specializing in tactical response and threat assessment.",
+      "story": "Robert leads our field operations with a calm and decisive demeanor honed by years on the front lines. He is responsible for the training and deployment of our security personnel, ensuring every officer meets our rigorous standards. His hands-on approach guarantees that our security strategies are both robust and practical."
+    },
+    {
+      "name": "Emily W., Client Relations",
+      "role": "Client Relations Manager",
+      "image": {
+        "src": "https://picsum.photos/seed/4/100/100",
+        "modalSrc": "https://picsum.photos/seed/4/400/600",
+        "dataAiHint": "woman face"
+      },
+      "experience": "10 years in corporate account management and customer success in the B2B service industry.",
+      "story": "Emily is the primary point of contact for our clients, building strong partnerships based on trust and communication. She works closely with each client to understand their unique needs and ensure their expectations are exceeded. Her dedication to client satisfaction is a cornerstone of our success."
+    }
+  ],
+  "aboutPage": {
+    "companyStory": {
+      "src": "https://picsum.photos/seed/story/800/600",
+      "alt": "Company founding photo",
+      "dataAiHint": "old photo"
+    }
+  },
+  "testimonials": [
+    {
+      "name": "Sarah L.",
+      "role": "CEO, TechCorp",
+      "avatar": {
+        "src": "https://picsum.photos/seed/5/100/100",
+        "dataAiHint": "woman face"
+      },
+      "quote": "Preetorian's team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can't recommend them enough."
+    },
+    {
+      "name": "Michael B.",
+      "role": "Event Organizer",
+      "avatar": {
+        "src": "https://picsum.photos/seed/6/100/100",
+        "dataAiHint": "man face"
+      },
+      "quote": "We hired Preetorian for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise."
+    },
+    {
+      "name": "David R.",
+      "role": "Warehouse Manager",
+      "avatar": {
+        "src": "https://picsum.photos/seed/7/100/100",
+        "dataAiHint": "man face"
+      },
+      "quote": "The mobile patrol service has been a game-changer for our facility. The random checks and detailed reports have significantly reduced instances of trespassing and theft after hours."
+    }
+  ],
+  "heroSlides": [
+    {
+      "image": {
+        "src": "https://picsum.photos/seed/tech/1200/800",
+        "dataAiHint": "security command center"
+      },
+      "alt": "Modern security operations center",
+      "title": "Advanced Security for a Modern World",
+      "description": "PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED delivers intelligent, proactive security solutions that protect your assets, people, and peace of mind.",
+      "buttonText": "Request a Consultation",
+      "buttonLink": "/contact"
+    },
+    {
+      "image": {
+        "src": "https://picsum.photos/seed/guard/1200/800",
+        "dataAiHint": "security guard uniform"
+      },
+      "alt": "Professional security guard",
+      "title": "Elite Manned Guarding Services",
+      "description": "Highly-trained officers providing a visible deterrent and rapid response for properties of all types.",
+      "buttonText": "Explore Guarding",
+      "buttonLink": "/services"
+    },
+    {
+      "image": {
+        "src": "https://picsum.photos/seed/event/1200/800",
+        "dataAiHint": "secure event"
+      },
+      "alt": "Large scale event security",
+      "title": "Comprehensive Event Security",
+      "description": "Specialized security planning and management for public and private events, ensuring a safe environment for all attendees.",
+      "buttonText": "Secure Your Event",
+      "buttonLink": "/contact"
+    }
+  ],
+  "servicesPage": {
+    "mannedGuarding": {
+      "src": "https://picsum.photos/seed/manned/800/400",
+      "dataAiHint": "security guard"
+    },
+    "cctv": {
+      "src": "https://picsum.photos/seed/cctv/800/400",
+      "dataAiHint": "cctv camera"
+    },
+    "mobilePatrols": {
+      "src": "https://picsum.photos/seed/car/800/400",
+      "dataAiHint": "security vehicle"
+    },
+    "alarmResponse": {
+      "src": "https://picsum.photos/seed/alarm/800/400",
+      "dataAiHint": "alarm system"
+    },
+    "corporateSecurity": {
+      "src": "https://picsum.photos/seed/office/800/400",
+      "dataAiHint": "office building"
+    },
+    "eventSecurity": {
+      "src": "https://picsum.photos/seed/eventcrowd/800/400",
+      "dataAiHint": "event crowd"
+    }
+  }
+}

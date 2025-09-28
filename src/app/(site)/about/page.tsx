@@ -15,6 +15,7 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 import { useState } from 'react';
+import imageData from '@/app/lib/placeholder-images.json';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -22,40 +23,7 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const teamMembers = [
-  {
-    name: 'John D., CEO',
-    role: 'Founder & CEO',
-    image: 'https://picsum.photos/100/100?a=1',
-    dataAiHint: 'man face',
-    experience: '20+ years in risk management and security consulting. Former military intelligence officer.',
-    story: 'John founded PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED with a mission to bring military-grade precision and integrity to the private security sector. After a distinguished career, he saw a need for a more proactive and client-focused approach to security. He is passionate about creating safer communities and building a team that shares his commitment to excellence.',
-  },
-  {
-    name: 'Jane S., COO',
-    role: 'Chief Operating Officer',
-    image: 'https://picsum.photos/100/100?a=2',
-    dataAiHint: 'woman face',
-    experience: '15 years in operations management for large-scale logistics and service companies.',
-    story: 'Jane is the operational backbone of PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED. Her expertise in streamlining complex operations ensures that our services are delivered efficiently and effectively. She is dedicated to fostering a culture of continuous improvement and ensuring our clients receive the highest level of service.',
-  },
-  {
-    name: 'Robert C., Head of Security',
-    role: 'Head of Security',
-    image: 'https://picsum.photos/100/100?a=3',
-    dataAiHint: 'man face',
-    experience: '25 years in law enforcement, specializing in tactical response and threat assessment.',
-    story: 'Robert leads our field operations with a calm and decisive demeanor honed by years on the front lines. He is responsible for the training and deployment of our security personnel, ensuring every officer meets our rigorous standards. His hands-on approach guarantees that our security strategies are both robust and practical.',
-  },
-  {
-    name: 'Emily W., Client Relations',
-    role: 'Client Relations Manager',
-    image: 'https://picsum.photos/100/100?a=4',
-    dataAiHint: 'woman face',
-    experience: '10 years in corporate account management and customer success in the B2B service industry.',
-    story: 'Emily is the primary point of contact for our clients, building strong partnerships based on trust and communication. She works closely with each client to understand their unique needs and ensure their expectations are exceeded. Her dedication to client satisfaction is a cornerstone of our success.',
-  },
-];
+const { teamMembers, aboutPage } = imageData;
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -68,7 +36,7 @@ export default function AboutPage() {
         className="bg-secondary"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         variants={fadeIn}
       >
         <div className="container mx-auto px-4 py-16 text-center">
@@ -85,14 +53,14 @@ export default function AboutPage() {
           className="grid md:grid-cols-2 gap-12 items-center mb-24"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeIn}
         >
           <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://picsum.photos/800/600"
-              alt="Company founding photo"
-              data-ai-hint="old photo"
+              src={aboutPage.companyStory.src}
+              alt={aboutPage.companyStory.alt}
+              data-ai-hint={aboutPage.companyStory.dataAiHint}
               fill
               className="object-cover"
             />
@@ -113,7 +81,7 @@ export default function AboutPage() {
           className="mb-24"
           initial="initial"
           whileInView="animate"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={fadeIn}
         >
           <div className="text-center mb-12">
@@ -170,7 +138,7 @@ export default function AboutPage() {
           <motion.section
             initial="initial"
             whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={fadeIn}
           >
             <div className="text-center mb-12">
@@ -182,7 +150,7 @@ export default function AboutPage() {
                 <DialogTrigger asChild key={member.name} onClick={() => setSelectedMember(member)}>
                   <div className="flex flex-col items-center text-center cursor-pointer group">
                     <Avatar className="w-32 h-32 mb-4 transition-transform duration-300 group-hover:scale-105">
-                      <AvatarImage src={member.image} alt={member.name} data-ai-hint={member.dataAiHint} />
+                      <AvatarImage src={member.image.src} alt={member.name} data-ai-hint={member.image.dataAiHint} />
                       <AvatarFallback>{member.name.split(',')[0].charAt(0)}</AvatarFallback>
                     </Avatar>
                     <h3 className="font-semibold text-lg text-foreground">{member.name}</h3>
@@ -194,13 +162,13 @@ export default function AboutPage() {
           </motion.section>
 
           {selectedMember && (
-            <DialogContent className="sm:max-w-2xl p-0">
+            <DialogContent className="sm:max-w-2xl p-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] duration-500">
                <div className="flex flex-col sm:flex-row">
                  <div className="relative sm:w-1/3 w-full h-48 sm:h-auto shrink-0">
                     <Image
-                        src={selectedMember.image.replace('100/100', '400/600')}
+                        src={selectedMember.image.modalSrc}
                         alt={selectedMember.name}
-                        data-ai-hint={selectedMember.dataAiHint}
+                        data-ai-hint={selectedMember.image.dataAiHint}
                         fill
                         className="object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
                     />
