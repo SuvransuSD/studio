@@ -31,7 +31,7 @@ export function Footer() {
                 <Phone className="w-4 h-4" /> +1 (555) 123-4567
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" /> contact@pretoriansecurity.com
+                <Mail className="w-4 h-4" /> info@preetorian.com
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" /> PLOT NO-233/1389, NUAGAON, SHIBA MANDIR, GHOTHAPATNA, Malipada, Bhubaneswar, Khorda- 751003, Orissa
