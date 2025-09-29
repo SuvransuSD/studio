@@ -54,7 +54,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Story</h2>
             <p className="text-muted-foreground mb-4">
-              Founded in 2010, PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED was born from a desire to create a safer community. Our founder, a veteran with extensive experience in risk management, saw the need for a security company that valued proactive prevention and client partnerships over reactive measures.
+              Founded in 2025, PREETORIAN INTEGRATED SOLUTIONS PRIVATE LIMITED was born from a desire to create a safer community. Our founder, a veteran with extensive experience in risk management, saw the need for a security company that valued proactive prevention and client partnerships over reactive measures.
             </p>
             <p className="text-muted-foreground">
               From our humble beginnings with a small team of dedicated professionals, we have grown into a leading security provider, trusted by businesses and individuals across the nation. Our commitment to our core values remains the bedrock of our success.

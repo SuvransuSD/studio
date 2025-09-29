@@ -47,9 +47,9 @@
   ],
   "aboutPage": {
     "companyStory": {
-      "src": "https://picsum.photos/seed/story/800/600",
-      "alt": "Company founding photo",
-      "dataAiHint": "old photo"
+      "src": "https://picsum.photos/seed/training/800/600",
+      "alt": "Security personnel in a training session",
+      "dataAiHint": "security training"
     }
   },
   "testimonials": [
