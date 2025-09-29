@@ -47,7 +47,7 @@
   ],
   "aboutPage": {
     "companyStory": {
-      "src": "https://picsum.photos/seed/training/800/600",
+      "src": "/Training pic.png",
       "alt": "Security personnel in a training session",
       "dataAiHint": "security training"
     }
