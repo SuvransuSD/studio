@@ -76,9 +76,13 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-primary" />
                   <span>info@preetorian.com</span>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-primary" />
-                  <span>+1 (555) 123-4567</span>
+                <div className="flex items-start gap-4">
+                  <Phone className="w-6 h-6 text-primary mt-1 shrink-0" />
+                  <div className="flex flex-col">
+                    <span>+91 63706 58861</span>
+                    <span>+91 77352 51280</span>
+                    <span>+91 99383 93018</span>
+                  </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary mt-1 shrink-0" />

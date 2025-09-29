@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 import { Phone, Mail, MapPin } from 'lucide-react';
@@ -27,8 +28,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" /> +1 (555) 123-4567
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5 shrink-0" /> 
+                <div className="flex flex-col">
+                    <span>+91 63706 58861</span>
+                    <span>+91 77352 51280</span>
+                    <span>+91 99383 93018</span>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" /> info@preetorian.com
