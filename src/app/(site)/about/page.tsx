@@ -4,17 +4,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Shield, Eye, Handshake } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import { useState } from 'react';
 import imageData from '@/app/lib/placeholder-images.json';
 
 const fadeIn = {
@@ -23,13 +13,9 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const { teamMembers, aboutPage } = imageData;
-
-type TeamMember = (typeof teamMembers)[0];
+const { aboutPage } = imageData;
 
 export default function AboutPage() {
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-
   return (
     <>
       <motion.div
@@ -132,67 +118,6 @@ export default function AboutPage() {
             </Card>
           </div>
         </motion.section>
-
-        {/* Leadership Team Section */}
-        <Dialog onOpenChange={(isOpen) => !isOpen && setSelectedMember(null)}>
-          <motion.section
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeIn}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground">Meet Our Leadership</h2>
-              <p className="mt-2 text-muted-foreground">The experienced minds guiding our mission.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              {teamMembers.map((member) => (
-                <DialogTrigger asChild key={member.name} onClick={() => setSelectedMember(member)}>
-                  <div className="flex flex-col items-center text-center cursor-pointer group">
-                    <Avatar className="w-32 h-32 mb-4 transition-transform duration-300 group-hover:scale-105">
-                      <AvatarImage src={member.image.src} alt={member.name} data-ai-hint={member.image.dataAiHint} />
-                      <AvatarFallback>{member.name.split(',')[0].charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <h3 className="font-semibold text-lg text-foreground">{member.name}</h3>
-                    <p className="text-primary">{member.role}</p>
-                  </div>
-                </DialogTrigger>
-              ))}
-            </div>
-          </motion.section>
-
-          {selectedMember && (
-            <DialogContent className="sm:max-w-2xl p-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] duration-500">
-               <div className="flex flex-col sm:flex-row">
-                 <div className="relative sm:w-1/3 w-full h-48 sm:h-auto shrink-0">
-                    <Image
-                        src={selectedMember.image.modalSrc}
-                        alt={selectedMember.name}
-                        data-ai-hint={selectedMember.image.dataAiHint}
-                        fill
-                        className="object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
-                    />
-                 </div>
-                 <div className="p-6 overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl mb-2">{selectedMember.name}</DialogTitle>
-                      <p className="text-base text-primary font-medium">{selectedMember.role}</p>
-                    </DialogHeader>
-                    <div className="mt-4 space-y-4 text-muted-foreground">
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">Experience</h4>
-                        <p>{selectedMember.experience}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">Our Journey</h4>
-                        <p>{selectedMember.story}</p>
-                      </div>
-                    </div>
-                  </div>
-               </div>
-            </DialogContent>
-          )}
-        </Dialog>
       </div>
     </>
   );
