@@ -54,8 +54,8 @@
   },
   "testimonials": [
     {
-      "name": "Sarah L.",
-      "role": "CEO, TechCorp",
+      "name": "Saroj Pradhan",
+      "role": "OdiTech",
       "avatar": {
         "src": "https://picsum.photos/seed/5/100/100",
         "dataAiHint": "woman face"
@@ -63,7 +63,7 @@
       "quote": "Preetorian's team is exceptional. Their professionalism and attention to detail gave us the peace of mind we needed for our corporate headquarters. I can't recommend them enough."
     },
     {
-      "name": "Michael B.",
+      "name": "Jagdish Prasad",
       "role": "Event Organizer",
       "avatar": {
         "src": "https://picsum.photos/seed/6/100/100",
@@ -72,7 +72,7 @@
       "quote": "We hired Preetorian for our annual city festival, and they were flawless. The security was visible but not intrusive, and their team handled every situation with calm and expertise."
     },
     {
-      "name": "David R.",
+      "name": "Suresh Kumar",
       "role": "Warehouse Manager",
       "avatar": {
         "src": "https://picsum.photos/seed/7/100/100",
