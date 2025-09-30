@@ -100,41 +100,6 @@ export default function AboutPage() {
           </Card>
         </motion.section>
 
-        {/* Service Boutique Section */}
-        <motion.section
-          className="mb-24"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: false, amount: 0.2 }}
-          variants={fadeIn}
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">SERVICE BOUTIQUE</h2>
-          </div>
-          <div className="relative">
-             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2 hidden md:block"></div>
-             <div className="absolute top-0 bottom-24 left-1/2 w-0.5 bg-border hidden md:block"></div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 relative">
-              {[
-                { icon: <Shield className="w-8 h-8" />, title: 'Security Services' },
-                { icon: <Building className="w-8 h-8" />, title: 'Integrated Facility Management' },
-                { icon: <Users className="w-8 h-8" />, title: 'Manpower Sourcing & HR Solutions' },
-                { icon: <FileText className="w-8 h-8" />, title: 'Toll Operations & Management' },
-                { icon: <GraduationCap className="w-8 h-8" />, title: 'Skill Development Programs' },
-              ].map((service, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
-                    <div className="relative mb-4">
-                        <div className="absolute top-[-4rem] left-1/2 w-0.5 h-16 bg-border hidden md:block"></div>
-                        <Card className="mx-auto bg-primary/10 text-primary p-4 rounded-lg w-fit border-primary border-2 shadow-lg">
-                           {service.icon}
-                        </Card>
-                    </div>
-                  <h3 className="font-semibold text-foreground">{service.title}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
       </div>
     </>
   );
