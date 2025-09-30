@@ -38,7 +38,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
                 <Image
-                    src="https://picsum.photos/seed/why-us/600/400"
+                    src="/Training pic.png"
                     alt="Solutions delivered with an innovative touch"
                     data-ai-hint="teamwork success"
                     fill
@@ -135,20 +135,6 @@ export default function AboutPage() {
             </div>
           </div>
         </motion.section>
-      </div>
-      <div className="bg-destructive text-destructive-foreground py-8">
-        <motion.div 
-            className="container mx-auto px-4 text-center"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: false, amount: 0.2 }}
-            variants={fadeIn}
-        >
-            <h3 className="text-2xl font-bold mb-4">GROUP COMPANIES</h3>
-            <p className="max-w-4xl mx-auto text-lg">
-                Vetted Consultant | Apoint Infotech | Innovision International | Aerodrone Robotics | Innovision HR Consultancy LLC
-            </p>
-        </motion.div>
       </div>
     </>
   );
