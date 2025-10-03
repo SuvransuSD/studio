@@ -60,7 +60,7 @@ export default function AboutPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>One-Stop Shop: Tailor-made Solution</CardTitle>
+              <CardTitle>One-Stop Shop: Tailor-made Solution </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
