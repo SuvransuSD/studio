@@ -94,7 +94,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                By choosing PREETORIAN, you get the perks of a locally owned organization that's backed by a national network.
+                By choosing PREETORIAN, you get the perks of a locally owned organization that's backed by a national network. 
               </p>
             </CardContent>
           </Card>
